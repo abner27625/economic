@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.abner.economic.R;
 import com.abner.economic.module.KLine.bean.DataParse;
 import com.abner.economic.module.KLine.bean.KLineBean;
@@ -45,6 +46,7 @@ import com.github.mikephil.charting.utils.Utils;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -394,6 +396,7 @@ public class KLineActivity extends AppCompatActivity {
         axisLeftCharts.setTextColor(getResources().getColor(R.color.text_color_common));
         axisLeftCharts.setPosition(YAxis.YAxisLabelPosition.INSIDE_CHART);
         axisLeftCharts.setLabelCount(1, false); //第一个参数是Y轴坐标的个数，第二个参数是 是否不均匀分布，true是不均匀分布
+
 
         axisRightCharts = mChartCharts.getAxisRight();
         axisRightCharts.setDrawLabels(false);
@@ -1116,6 +1119,7 @@ public class KLineActivity extends AppCompatActivity {
         CandleDataSet dataSet = new CandleDataSet(null, "DataSet 1");
         dataSet.setAxisDependency(YAxis.AxisDependency.LEFT);
         dataSet.setValueTextSize(12f);
+
         return dataSet;
     }
 
@@ -1123,6 +1127,7 @@ public class KLineActivity extends AppCompatActivity {
         LineDataSet dataSet = new LineDataSet(null, "DataSet 1");
         dataSet.setAxisDependency(YAxis.AxisDependency.LEFT);
         dataSet.setValueTextSize(12f);
+
         return dataSet;
     }
 
@@ -1130,6 +1135,7 @@ public class KLineActivity extends AppCompatActivity {
         BarDataSet dataSet = new BarDataSet(null, "DataSet 1");
         dataSet.setAxisDependency(YAxis.AxisDependency.LEFT);
         dataSet.setValueTextSize(12f);
+
         return dataSet;
     }
 
