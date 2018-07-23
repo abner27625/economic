@@ -1,6 +1,7 @@
 package com.abner.economic.module.quotes;
 
 import android.support.v4.app.Fragment;
+import android.util.Log;
 
 import com.abner.economic.base.BasePresenter;
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class QuotesPresenter extends BasePresenter<QuotesFragment>  {
 
     @Override
     public void initData() {
-
+        fragments.clear();
         for(String title : mtitles){
 //            fragments.add(QuotesView.getInstance());
             fragments.add(TestView.getInstance());
@@ -33,7 +34,7 @@ public class QuotesPresenter extends BasePresenter<QuotesFragment>  {
         view.ctl_tab.setOnTabSelectListener(view);
 
         view.ctl_tab.setViewPager(view.vp_quotes);
-        view.vp_quotes.setCurrentItem(0);
+        view.vp_quotes.setCurrentItem(view.ctl_tab.getCurrentTab());
 
     }
 }

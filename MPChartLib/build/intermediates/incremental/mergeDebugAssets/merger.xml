@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="F:\KLineChartDemo-master\MPChartLib\assets"/><source path="F:\KLineChartDemo-master\MPChartLib\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="F:\KLineChartDemo-master\MPChartLib\src\debug\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/loony/Downloads/economic/MPChartLib/assets"/><source path="/Users/loony/Downloads/economic/MPChartLib/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/Users/loony/Downloads/economic/MPChartLib/src/debug/assets"/></dataSet></merger>
