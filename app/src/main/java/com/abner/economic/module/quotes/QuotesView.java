@@ -47,7 +47,7 @@ public class QuotesView extends Fragment implements BaseQuickAdapter.RequestLoad
         quotesAdapter = new QuotesViewAdapter();
         rv_quotes.setAdapter(quotesAdapter);
 
-        stl_refresh.autoRefresh();
+//        stl_refresh.autoRefresh();
         stl_refresh.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
