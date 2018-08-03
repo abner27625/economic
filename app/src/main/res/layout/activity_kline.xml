@@ -162,27 +162,27 @@
 
         <include layout="@layout/view_kline_chart_top_ma" />
 
-        <com.sanqius.loro.cjlc.mychart.MyCombinedChart
+        <com.abner.economic.module.KLine.mychart.MyCombinedChart
             android:id="@+id/kline_chart_k"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"></com.sanqius.loro.cjlc.mychart.MyCombinedChart>
+            android:layout_weight="2"></com.abner.economic.module.KLine.mychart.MyCombinedChart>
 
-        <com.sanqius.loro.cjlc.mychart.MyCombinedChart
+        <com.abner.economic.module.KLine.mychart.MyCombinedChart
             android:id="@+id/kline_chart_volume"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"></com.sanqius.loro.cjlc.mychart.MyCombinedChart>
+            android:layout_weight="1"></com.abner.economic.module.KLine.mychart.MyCombinedChart>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
 
-            <com.sanqius.loro.cjlc.mychart.MyCombinedChart
+            <com.abner.economic.module.KLine.mychart.MyCombinedChart
                 android:id="@+id/kline_chart_charts"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"></com.sanqius.loro.cjlc.mychart.MyCombinedChart>
+                android:layout_height="match_parent"></com.abner.economic.module.KLine.mychart.MyCombinedChart>
 
             <ImageView
                 android:id="@+id/kline_iv_refresh"

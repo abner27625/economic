@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import com.abner.economic.R;
 
-public class ActionbarAtrribute {
+public class ActionbarAttribute {
     private String mLeftTitle = "";
     private int mLeftImageId = R.drawable.actionbar_jiantou;
     private String mCenterString = "TODO";
@@ -15,20 +15,20 @@ public class ActionbarAtrribute {
     private boolean ivVisible = true;
     public int mRightTextcolor = 0;
 
-    public ActionbarAtrribute(String centerString, String rightTitle, OnClickListener rightOnClickListener) {
+    public ActionbarAttribute(String centerString, String rightTitle, OnClickListener rightOnClickListener) {
         this(centerString, rightTitle, rightOnClickListener, View.VISIBLE);
     }
 
-    public ActionbarAtrribute(int visible) {
+    public ActionbarAttribute(int visible) {
         mVisible = visible;
     }
 
-    public ActionbarAtrribute(String centerString) {
+    public ActionbarAttribute(String centerString) {
         mCenterString = centerString;
     }
 
 
-    public ActionbarAtrribute(String centerString, String rightTitle, OnClickListener rightOnClickListener, int visible) {
+    public ActionbarAttribute(String centerString, String rightTitle, OnClickListener rightOnClickListener, int visible) {
         mCenterString = centerString;
         mRightTitle = rightTitle;
         mRightOnClickListener = rightOnClickListener;
@@ -39,7 +39,7 @@ public class ActionbarAtrribute {
         return mLeftTitle;
     }
 
-    public ActionbarAtrribute setLeftTitle(String leftTitle) {
+    public ActionbarAttribute setLeftTitle(String leftTitle) {
         mLeftTitle = leftTitle;
         return this;
     }
@@ -48,7 +48,7 @@ public class ActionbarAtrribute {
         return mLeftImageId;
     }
 
-    public ActionbarAtrribute setLeftImageId(int leftImageId) {
+    public ActionbarAttribute setLeftImageId(int leftImageId) {
         mLeftImageId = leftImageId;
         return this;
     }
@@ -57,7 +57,7 @@ public class ActionbarAtrribute {
         return mCenterString;
     }
 
-    public ActionbarAtrribute setCenterString(String centerString) {
+    public ActionbarAttribute setCenterString(String centerString) {
         mCenterString = centerString;
         return this;
     }
@@ -66,18 +66,18 @@ public class ActionbarAtrribute {
         return mRightTitle;
     }
 
-    public ActionbarAtrribute setRightTitle(String rightTitle) {
+    public ActionbarAttribute setRightTitle(String rightTitle) {
         mRightTitle = rightTitle;
         return this;
     }
-    public ActionbarAtrribute setRightTextColor(int rightTextColor){
+    public ActionbarAttribute setRightTextColor(int rightTextColor){
         mRightTextcolor = rightTextColor;
         return this;
     }
     public int getRightTextColor(){
         return mRightTextcolor;
     }
-    public ActionbarAtrribute setRightBackground(int icon){
+    public ActionbarAttribute setRightBackground(int icon){
         mRightImageId = icon;
         return this;
     }
@@ -88,7 +88,7 @@ public class ActionbarAtrribute {
         return mRightOnClickListener;
     }
 
-    public ActionbarAtrribute setRightOnClickListener(OnClickListener rightOnClickListener) {
+    public ActionbarAttribute setRightOnClickListener(OnClickListener rightOnClickListener) {
         mRightOnClickListener = rightOnClickListener;
         return this;
     }
@@ -97,12 +97,12 @@ public class ActionbarAtrribute {
         return mVisible;
     }
 
-    public ActionbarAtrribute setVisible(int visible) {
+    public ActionbarAttribute setVisible(int visible) {
         mVisible = visible;
         return this;
     }
 
-    public ActionbarAtrribute setmLeftImageVisible(boolean visible){
+    public ActionbarAttribute setmLeftImageVisible(boolean visible){
         ivVisible = visible;
         return this;
     }

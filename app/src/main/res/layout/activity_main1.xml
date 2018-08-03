@@ -164,13 +164,13 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <com.sanqius.loro.cjlc.mychart.MyCombinedChartX
+                <com.abner.economic.module.KLine.mychart.MyCombinedChartX
                     android:id="@+id/main_chart_price"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="2"/>
 
-                <com.sanqius.loro.cjlc.mychart.MyCombinedChartX
+                <com.abner.economic.module.KLine.mychart.MyCombinedChartX
                     android:id="@+id/main_chart_volume"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"

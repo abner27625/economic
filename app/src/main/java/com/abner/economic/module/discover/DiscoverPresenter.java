@@ -1,16 +1,11 @@
 package com.abner.economic.module.discover;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.LinearLayoutManager;
-
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import com.abner.economic.base.BasePresenter;
-import com.abner.economic.module.account.AccountFragment;
-import com.abner.economic.module.quotes.TitleTabEntity;
-import com.flyco.tablayout.listener.CustomTabEntity;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
-
-import java.util.ArrayList;
+import com.abner.economic.module.discover.pointmall.PointMallFragment;
+import com.abner.economic.module.quotes.TestView;
 
 /**
  * Created by loony on 2018/7/18.
@@ -18,7 +13,7 @@ import java.util.ArrayList;
 
 public class DiscoverPresenter extends BasePresenter<DiscoverFragment> {
 
-    public ArrayList<CustomTabEntity> tabEntities;
+    public String[] mtitles = {"名师直播","学习专区","积分商城"};
     public DiscoverAdapter discoverAdapter;
 
     public DiscoverPresenter(DiscoverFragment view) {
@@ -27,30 +22,33 @@ public class DiscoverPresenter extends BasePresenter<DiscoverFragment> {
 
     @Override
     public void initData() {
-        tabEntities = new ArrayList<>();
-        tabEntities.add(new TitleTabEntity("名师直播"));
-        tabEntities.add(new TitleTabEntity("学习专区"));
-        tabEntities.add(new TitleTabEntity("积分商城"));
-
-        view.ctl_tab.setTabData(tabEntities);
+        discoverAdapter = new DiscoverAdapter(getActivity().getSupportFragmentManager());
+        view.vp_discover.setAdapter(discoverAdapter);
         view.ctl_tab.setOnTabSelectListener(view);
-        view.ctl_tab.setCurrentTab(0);
-
-        initAdapter();
-
-        view.rl_discover.setLayoutManager(new LinearLayoutManager(view.getXDActivity()));
-        view.stl_refresh.autoRefresh();
-        view.stl_refresh.setOnRefreshListener(new OnRefreshListener() {
-            @Override
-            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-
-            }
-        });
+        view.ctl_tab.setViewPager(view.vp_discover,mtitles);
+        view.vp_discover.setCurrentItem(view.ctl_tab.getCurrentTab());
     }
 
-    public void initAdapter(){
-        discoverAdapter = new DiscoverAdapter();
-        discoverAdapter.setOnLoadMoreListener(view,view.rl_discover);
-        view.rl_discover.setAdapter(discoverAdapter);
+    class DiscoverAdapter extends FragmentPagerAdapter{
+
+        public DiscoverAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            Fragment view;
+             if(position == 2){
+                view = new PointMallFragment();
+            }  else {
+                view = new TestView();
+            }
+            return view;
+        }
+
+        @Override
+        public int getCount() {
+            return 3;
+        }
     }
 }

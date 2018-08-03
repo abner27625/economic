@@ -37,4 +37,6 @@
 
     <color name="increasing_color">#CD2626</color>
     <color name="decreasing_color">#006400</color>
+
+    <color name="color_333333">#333333</color>
 </resources>

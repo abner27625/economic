@@ -21,7 +21,7 @@ public class TestView extends Base2Fragment<QuotesViewPresenter> implements Base
 
     @Override
     public View setContentView() {
-        return inflater.inflate(R.layout.quotes_view,null);
+        return inflater.inflate(R.layout.view_recyclerview,null);
     }
 
     @Override

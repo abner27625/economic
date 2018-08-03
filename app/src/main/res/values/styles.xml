@@ -8,6 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
+        <item name="cardViewStyle">@style/CardView</item>
+    </style>
+
+    <style name="dialog_style">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">#55000000</item>
+        <item name="android:backgroundDimAmount">0.6</item>
     </style>
 
 </resources>

@@ -3,9 +3,9 @@ package com.abner.economic;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
-
-import com.abner.economic.base.ActionbarAtrribute;
+import com.abner.economic.base.ActionbarAttribute;
 import com.abner.economic.base.MVPBaseActivity;
+import com.hjm.bottomtabbar.BottomTabBar;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -20,15 +20,17 @@ public class MainActivity extends MVPBaseActivity<MainActivityPresenter> {
     RelativeLayout main_third;
     @BindView(R.id.main_forth)
     RelativeLayout main_forth;
+    @BindView(R.id.main_fifth)
+    RelativeLayout main_fifth;
 
     @Override
-    public MainActivityPresenter creatPresenter() {
+    public MainActivityPresenter createPresenter() {
         return new MainActivityPresenter(this);
     }
 
     @Override
-    public ActionbarAtrribute getActionbarAtrribute() {
-        return new ActionbarAtrribute(View.GONE);
+    public ActionbarAttribute getActionbarAttribute() {
+        return new ActionbarAttribute(View.GONE);
     }
 
     @Override
@@ -46,7 +48,7 @@ public class MainActivity extends MVPBaseActivity<MainActivityPresenter> {
         return R.layout.activity_main;
     }
 
-    @OnClick({R.id.main_first,R.id.main_second,R.id.main_third,R.id.main_forth})
+    @OnClick({R.id.main_first,R.id.main_second,R.id.main_third,R.id.main_forth,R.id.main_fifth})
     public void onClick(View v){
         switch (v.getId()){
             case R.id.main_first:
@@ -60,6 +62,9 @@ public class MainActivity extends MVPBaseActivity<MainActivityPresenter> {
                 break;
             case R.id.main_forth:
                 presenter.accountFragmentClick();
+                break;
+            case R.id.main_fifth:
+                presenter.exchangeFragmentClick();
                 break;
         }
     }

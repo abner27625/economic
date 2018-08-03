@@ -27,6 +27,13 @@
         </activity>
         <activity android:name=".module.KLine.ui.MainActivity"/>
         <activity android:name=".module.KLine.ui.KLineActivity"/>
+        <activity android:name=".module.media.MediaActivity"/>
+        <activity android:name=".module.loginAndregister.LoginAndRegisterActivity"/>
+        <activity android:name=".module.discover.pointhistory.PointHistoryActivity"/>
+        <activity android:name=".module.recharge.RechargeActivity"/>
+        <activity android:name=".module.withdraw.WithdrawActivity"/>
+        <activity android:name=".module.withdraw.BankInfoActivity"/>
+
     </application>
 
 </manifest>

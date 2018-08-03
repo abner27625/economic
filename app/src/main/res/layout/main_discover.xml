@@ -14,7 +14,7 @@
         android:textColor="#ffffff"
         android:textSize="16sp"/>
 
-    <com.flyco.tablayout.CommonTabLayout
+    <com.flyco.tablayout.SlidingTabLayout
         android:id="@+id/ctl_tab"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -28,18 +28,22 @@
         app:tl_tab_space_equal="true"
         app:tl_indicator_anim_enable="true"
         />
-    <com.scwang.smartrefresh.layout.SmartRefreshLayout
-        android:id="@+id/stl_refresh"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_discover"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:srlEnableLoadMore="false"
-        app:srlEnablePreviewInEditMode="true">
+        android:layout_height="match_parent"/>
+    <!--<com.scwang.smartrefresh.layout.SmartRefreshLayout-->
+        <!--android:id="@+id/stl_refresh"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical"-->
+        <!--app:srlEnableLoadMore="false"-->
+        <!--app:srlEnablePreviewInEditMode="true">-->
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rl_discover"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+        <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/rl_discover"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"/>-->
 
-    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <!--</com.scwang.smartrefresh.layout.SmartRefreshLayout>-->
 </LinearLayout>

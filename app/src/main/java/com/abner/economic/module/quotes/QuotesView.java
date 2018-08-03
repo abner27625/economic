@@ -36,7 +36,7 @@ public class QuotesView extends Fragment implements BaseQuickAdapter.RequestLoad
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.quotes_view,null);
+        View view = inflater.inflate(R.layout.view_recyclerview,null);
         unbinder= ButterKnife.bind(this,view);
         return view;
     }

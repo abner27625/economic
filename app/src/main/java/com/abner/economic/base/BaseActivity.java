@@ -23,8 +23,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import static android.view.View.GONE;
 
-public abstract class BaseActivity extends RxAppCompatActivity implements ActivityView {
-    protected View actionbar;
+public abstract class BaseActivity<T extends BasePresenter> extends RxAppCompatActivity implements ActivityView {
     @BindView(R.id.iv_left_actionbar)
     protected ImageView mIvLeftActionbar;
     @BindView(R.id.tv_lefttitle_actionbar)
@@ -48,6 +47,7 @@ public abstract class BaseActivity extends RxAppCompatActivity implements Activi
     private Unbinder unbinder;
     private boolean flag = true;
     private boolean isContainFragment=false;
+    public T presenter;
     private final class XDLinearLayout extends LinearLayout {
 
         public XDLinearLayout(Context context) {
@@ -55,6 +55,11 @@ public abstract class BaseActivity extends RxAppCompatActivity implements Activi
             setOrientation(VERTICAL);
         }
     }
+    /**
+     * 创建业务类
+     * @return
+     */
+    public abstract T createPresenter();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -71,6 +76,7 @@ public abstract class BaseActivity extends RxAppCompatActivity implements Activi
         initActionBar(xdActionbar);
         initSystemBar();
         init();
+        presenter= UIUtils.checkNotNull(createPresenter());
     }
 
     public View getXDActionbar() {
@@ -82,7 +88,7 @@ public abstract class BaseActivity extends RxAppCompatActivity implements Activi
     }
 
     protected void initActionBar(View xdActionbar) {
-        ActionbarAtrribute actionbarAtrribute = getActionbarAtrribute();
+        ActionbarAttribute actionbarAtrribute = getActionbarAttribute();
         if (View.VISIBLE == actionbarAtrribute.getVisible()) {
             setUpActionbarUi(actionbarAtrribute);
         } else {
@@ -90,7 +96,7 @@ public abstract class BaseActivity extends RxAppCompatActivity implements Activi
         }
     }
 
-    protected void setUpActionbarUi(ActionbarAtrribute actionbarAtrribute) {
+    protected void setUpActionbarUi(ActionbarAttribute actionbarAtrribute) {
         mTvLefttitleActionbar.setText(actionbarAtrribute.getLeftTitle());
         if(actionbarAtrribute.getmLeftImageVisible()){
             mIvLeftActionbar.setImageResource(actionbarAtrribute.getLeftImageId());
@@ -116,7 +122,7 @@ public abstract class BaseActivity extends RxAppCompatActivity implements Activi
         });
     }
 
-    public abstract ActionbarAtrribute getActionbarAtrribute();
+    public abstract ActionbarAttribute getActionbarAttribute();
     public abstract boolean isContainFragments();
 
     private void initSystemBar() {
@@ -143,6 +149,7 @@ public abstract class BaseActivity extends RxAppCompatActivity implements Activi
     protected void onResume() {
         super.onResume();
         isContainFragment=isContainFragments();
+        presenter.initData();
     }
 
     @Override
@@ -164,16 +171,16 @@ public abstract class BaseActivity extends RxAppCompatActivity implements Activi
 
     @Override
     public void setContentView(View view) {
-        if (!(view instanceof XDLinearLayout)) {
-            throw new RuntimeException("不要手动调用...");
-        } else {
+//        if (!(view instanceof XDLinearLayout)) {
+//            throw new RuntimeException("不要手动调用...");
+//        } else {
             super.setContentView(view);
-        }
+//        }
     }
 
 
     @Override
-    public BaseActivity getXDActivity() {
+    public BaseActivity getLSActivity() {
         return this;
     }
 

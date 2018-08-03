@@ -47,7 +47,7 @@ public abstract class Base2Fragment<T extends BasePresenter> extends RxFragment 
     }
 
     @Override
-    public Activity getXDActivity() {
+    public Activity getLSActivity() {
         return this.getActivity();
     }
 }

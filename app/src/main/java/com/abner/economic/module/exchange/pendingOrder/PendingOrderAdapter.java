@@ -1,22 +1,17 @@
-package com.abner.economic.module.discover;
+package com.abner.economic.module.exchange.pendingOrder;
 
 import com.abner.economic.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
-/**
- * Created by loony on 2018/7/19.
- */
+public class PendingOrderAdapter extends BaseQuickAdapter<Object, BaseViewHolder> {
 
-public class DiscoverAdapter extends BaseQuickAdapter<Object,BaseViewHolder> {
-
-    public DiscoverAdapter() {
-        super(R.layout.item_quotes);
+    public PendingOrderAdapter() {
+        super(R.layout.item_bankinfo);
     }
 
     @Override
     protected void convert(BaseViewHolder helper, Object item) {
 
     }
-
 }

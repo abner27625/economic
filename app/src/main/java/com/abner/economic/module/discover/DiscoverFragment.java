@@ -1,13 +1,12 @@
 package com.abner.economic.module.discover;
 
-import android.support.v7.widget.RecyclerView;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import com.abner.economic.R;
 import com.abner.economic.base.BaseFragment;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.flyco.tablayout.CommonTabLayout;
+import com.flyco.tablayout.SlidingTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import butterknife.BindView;
 
 /**
@@ -16,11 +15,13 @@ import butterknife.BindView;
 
 public class DiscoverFragment extends BaseFragment<DiscoverPresenter> implements OnTabSelectListener, BaseQuickAdapter.RequestLoadMoreListener {
     @BindView(R.id.ctl_tab)
-    CommonTabLayout ctl_tab;
-    @BindView(R.id.stl_refresh)
-    SmartRefreshLayout stl_refresh;
-    @BindView(R.id.rl_discover)
-    RecyclerView rl_discover;
+    SlidingTabLayout ctl_tab;
+//    @BindView(R.id.stl_refresh)
+//    SmartRefreshLayout stl_refresh;
+//    @BindView(R.id.rl_discover)
+//    RecyclerView rl_discover;
+    @BindView(R.id.vp_discover)
+    ViewPager vp_discover;
 
     @Override
     public View setContentView() {
